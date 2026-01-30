@@ -1,1 +1,73 @@
-/* Add styles here */
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#app {
+    background-color: #162447;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+h1 {
+    color: #fca311;
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.input-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+#question {
+    flex-grow: 1;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #fca311;
+    background-color: #1f4068;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+#get-fortune {
+    background-color: #fca311;
+    color: #162447;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#get-fortune:hover {
+    background-color: #e99400;
+    transform: translateY(-2px);
+}
+
+#fortune-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #1f4068;
+    border: 1px solid #fca311;
+    transition: opacity 0.5s;
+}
+
+#fortune-container.hidden {
+    display: none;
+}
