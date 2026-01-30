@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('toggle-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const storedTheme = localStorage.getItem('theme');
+    const useDark = storedTheme ? storedTheme === 'dark' : prefersDark;
+
+    const applyTheme = (isDark) => {
+        document.body.classList.toggle('dark', isDark);
+        themeToggle.textContent = isDark ? '라이트 모드' : '다크 모드';
+        themeToggle.setAttribute('aria-pressed', String(isDark));
+    };
+
+    applyTheme(useDark);
+
+    themeToggle.addEventListener('click', () => {
+        const isDarkNow = document.body.classList.toggle('dark');
+        localStorage.setItem('theme', isDarkNow ? 'dark' : 'light');
+        applyTheme(isDarkNow);
+    });
+
     const questionInput = document.getElementById('question');
     const getFortuneBtn = document.getElementById('get-fortune');
     const fortuneContainer = document.getElementById('fortune-container');
